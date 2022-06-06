@@ -5,8 +5,8 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>背景色を付けた</h1>
- 背景色をつけてみた
+ <h1>太陽と星10個作ってみた</h1>
+ 太陽と星10個作ってみた
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -68,14 +68,14 @@
         const materialStar = new THREE.SpriteMaterial({ map: textureStar,});
         //星を10個作成
         for(let i = 0;i < 20;i++){
-            const spriteStar = new THREE.Sprite(materialStar);
+            const sprite = new THREE.Sprite(materialStar);
             // ランダムな座標に配置
-            spriteStar.potion.x=3*(Math.random()-0.5);
-            spriteStar.potion.y=3*(Math.random()-0.5);
-            spriteStar.potion.z=3*(Math.random()-0.5);
+            sprite.potion.x=3*(Math.random()-0.5);
+            sprite.potion.y=3*(Math.random()-0.5);
+            sprite.potion.z=3*(Math.random()-0.5);
             // スケールを調整
-            spriteStar.scale.set(0.5,0.5,0.5);
-            scene.add(spriteStar);
+            sprite.scale.set(0.5,0.5,0.5);
+            scene.add(sprite);
         }
 
 
