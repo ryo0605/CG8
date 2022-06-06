@@ -62,13 +62,13 @@
         spriteSun.position.set(0,0,0); //位置を指定
         scene.add(spriteSun);
 
-        // 木をスプライトで作成
+        // 星をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/tree0.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
-        // 森を作成
-        for (let i = 0; i < 20; i++) {
+        // 星を作成
+        for (let i = 0; i < 10; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
           sprite.position.x = 2 * (Math.random() - 0.5);
