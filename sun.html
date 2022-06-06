@@ -54,8 +54,8 @@
 
         // 太陽をスプライトで作成
         var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("img/sun.png");
-        const materialSun = new THREE.SpriteMaterial({ map: texture,});
+        var textureSun = textureLoader.load("img/sun.png");
+        const materialSun = new THREE.SpriteMaterial({ map: textureSun,});
         // 太陽
         const spriteSun = new THREE.Sprite(material);
         spriteSun.scale.set(1,1,1);
@@ -64,18 +64,18 @@
 
         // 星をスプライトで作成
         var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("img/star.png");
-        const materialStar = new THREE.SpriteMaterial({ map: texture,});
+        var textureStar = textureLoader.load("img/star.png");
+        const materialStar = new THREE.SpriteMaterial({ map: textureStar,});
         //星を10個作成
         for(let i = 0;i < 20;i++){
-            const sprite = new THREE.Sprite(materialStar);
+            const spriteStar = new THREE.Sprite(materialStar);
             // ランダムな座標に配置
-            sprite.potion.x=3*(Math.random()-0.5);
-            sprite.potion.y=3*(Math.random()-0.5);
-            sprite.potion.z=3*(Math.random()-0.5);
+            spriteStar.potion.x=3*(Math.random()-0.5);
+            spriteStar.potion.y=3*(Math.random()-0.5);
+            spriteStar.potion.z=3*(Math.random()-0.5);
             // スケールを調整
-            sprite.scale.set(0.5,0.5,0.5);
-            scene.add(sprite);
+            spriteStar.scale.set(0.5,0.5,0.5);
+            scene.add(spriteStar);
         }
 
 
