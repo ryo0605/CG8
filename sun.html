@@ -57,7 +57,7 @@
         var textureSun = textureLoader.load("img/sun.png");
         const materialSun = new THREE.SpriteMaterial({ map: textureSun,});
         // 太陽
-        const spriteSun = new THREE.Sprite(material);
+        const spriteSun = new THREE.Sprite(materialSun);
         spriteSun.scale.set(1,1,1);
         spriteSun.position.set(0,0,0); //位置を指定
         scene.add(spriteSun);
