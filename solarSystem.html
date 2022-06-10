@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0x191970);
+        renderer.setClearColor(0xffffff);
 
 
         // シーンを作成
@@ -62,89 +62,24 @@
         spriteSun.position.set(0,0,0); //位置を指定
         scene.add(spriteSun);
 
-        // 太陽をスプライトで作成
-        //var textureLoader = new THREE.TextureLoader();
-        //var textureSun = textureLoader.load("img/sun.png");
-        //const materialSun = new THREE.SpriteMaterial({ map: textureSun,});
-        // sui
-        const sprite1 = new THREE.Sprite(materialSun);
-        sprite1.scale.set(0.38,0.38,1);
-        sprite1.position.set(3.8,0,0); //位置を指定
-        scene.add(sprite1);
+        // 星をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/eye.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
 
-        //kin
-        const sprite2 = new THREE.Sprite(materialSun);
-        sprite2.scale.set(0.95,0.95,1);
-        sprite2.position.set(7.2,0,0); //位置を指定
-        scene.add(sprite2);
-        
-        //ti
-        const sprite3 = new THREE.Sprite(materialSun);
-        sprite3.scale.set(1,1,1);
-        sprite3.position.set(10,0,0); //位置を指定
-        scene.add(sprite3);
+        // 星を作成
+        for (let i = 0; i < 50; i++) {
+          const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = 20 * (Math.random() - 0.5);
+          sprite.position.y = 20 * (Math.random()- 0.5);
+          sprite.position.z = 20 * (Math.random() - 0.5);
+          // スケールを調整
+          sprite.scale.set(0.5, 0.5, 0.5);
 
-        //ka
-        const sprite4 = new THREE.Sprite(materialSun);
-        sprite4.scale.set(0.53,0.53,1);
-        sprite4.position.set(15.2,0,0); //位置を指定
-        scene.add(sprite4);
+          scene.add(sprite);
+        }
 
-        //moku
-        const sprite5 = new THREE.Sprite(materialSun);
-        sprite5.scale.set(10.97,10.97,1);
-        sprite5.position.set(52,0,0); //位置を指定
-        scene.add(sprite5);
-
-        //tuti
-        const sprite6 = new THREE.Sprite(materialSun);
-        sprite6.scale.set(9.14,9.14,1);
-        sprite6.position.set(95.3,0,0); //位置を指定
-        scene.add(sprite6);
-
-        //kai
-        const sprite7 = new THREE.Sprite(materialSun);
-        sprite7.scale.set(3.98,3.98,1);
-        sprite7.position.set(191.9,0,0); //位置を指定
-        scene.add(sprite7);
-
-        //kin
-        const sprite8 = new THREE.Sprite(materialSun);
-        sprite8.scale.set(3.87,3.87,1);
-        sprite8.position.set(300,0,0); //位置を指定
-        scene.add(sprite8);
-
-        const revolution1 = new THREE.Group();
-        revolution1.add(sprite1);
-        scene.add(revolution1);
-
-        const revolution2 = new THREE.Group();
-        revolution2.add(sprite2);
-        scene.add(revolution2);
-
-        const revolution3 = new THREE.Group();
-        revolution3.add(sprite3);
-        scene.add(revolution3);
-
-        const revolution4 = new THREE.Group();
-        revolution4.add(sprite4);
-        scene.add(revolution4);
-
-        const revolution5 = new THREE.Group();
-        revolution5.add(sprite5);
-        scene.add(revolution5);
-
-        const revolution6 = new THREE.Group();
-        revolution6.add(sprite6);
-        scene.add(revolution6);
-
-        const revolution7 = new THREE.Group();
-        revolution7.add(sprite7);
-        scene.add(revolution7);
-
-        const revolution8 = new THREE.Group();
-        revolution8.add(sprite8);
-        scene.add(revolution8);
 
         update();
 
@@ -153,15 +88,6 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-
-          revolution1.rotation.y += 0.000024;
-          revolution2.rotation.y += 0.000061;
-          revolution3.rotation.y += 0.0001;
-          revolution4.rotation.y += 0.000188;
-          revolution5.rotation.y += 0.001186;
-          revolution6.rotation.y += 0.002945;
-          revolution7.rotation.y += 0.008402;
-          revolution8.rotation.y += 0.016477;
 
            // 箱を回転させる
           box.rotation.x += 0.01;
