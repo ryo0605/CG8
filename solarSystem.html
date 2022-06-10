@@ -114,6 +114,37 @@
         sprite8.position.set(300,0,0); //位置を指定
         scene.add(sprite8);
 
+        const revolution1 = new THREE.Group();
+        group.add(sprite1);
+        scene.add(revolution1);
+
+        const revolution2 = new THREE.Group();
+        group.add(sprite2);
+        scene.add(revolution2);
+
+        const revolution3 = new THREE.Group();
+        group.add(sprite3);
+        scene.add(revolution3);
+
+        const revolution4 = new THREE.Group();
+        group.add(sprite4);
+        scene.add(revolution4);
+
+        const revolution5 = new THREE.Group();
+        group.add(sprite5);
+        scene.add(revolution5);
+
+        const revolution6 = new THREE.Group();
+        group.add(sprite6);
+        scene.add(revolution6);
+
+        const revolution7 = new THREE.Group();
+        group.add(sprite7);
+        scene.add(revolution7);
+
+        const revolution8 = new THREE.Group();
+        group.add(sprite8);
+        scene.add(revolution8);
 
         update();
 
@@ -123,14 +154,14 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          sprite1.rotation.x += 0.24;
-          sprite2.rotation.y += 0.61;
-          sprite3.rotation.z += 1;
-          sprite4.rotation.y += 1.88;
-          sprite5.rotation.y += 11.86;
-          sprite6.rotation.y += 29.45;
-          sprite7.rotation.y += 84.02;
-          sprite8.rotation.y += 164.77;
+          revolution1.rotation.y += 0.24;
+          revolution2.rotation.y += 0.61;
+          revolution3.rotation.y += 1;
+          revolution4.rotation.y += 1.88;
+          revolution5.rotation.y += 11.86;
+          revolution6.rotation.y += 29.45;
+          revolution7.rotation.y += 84.02;
+          revolution8.rotation.y += 164.77;
 
            // 箱を回転させる
           box.rotation.x += 0.01;
