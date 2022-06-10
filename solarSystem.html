@@ -5,8 +5,7 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>太陽と星10個作ってみた</h1>
- 太陽と星10個作ってみた
+ <h1>ビルボードを利用してちょっと怖い画像作ってみました </h1>
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -48,26 +47,16 @@
 
         // helper
         const gridHelper = new THREE.GridHelper(2,10); // size, step
-        scene.add(gridHelper);
+        //scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
-        scene.add(axisHelper);
+        //scene.add(axisHelper);
 
-        // 太陽をスプライトで作成
-        var textureLoader = new THREE.TextureLoader();
-        var textureSun = textureLoader.load("img/sun.png");
-        const materialSun = new THREE.SpriteMaterial({ map: textureSun,});
-        // 太陽
-        const spriteSun = new THREE.Sprite(materialSun);
-        spriteSun.scale.set(1,1,1);
-        spriteSun.position.set(0,0,0); //位置を指定
-        scene.add(spriteSun);
-
-        // 星をスプライトで作成
+        // 目をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/eye.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
-        // 星を作成
+        // 目を作成
         for (let i = 0; i < 100; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
