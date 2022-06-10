@@ -58,7 +58,7 @@
         const materialSun = new THREE.SpriteMaterial({ map: textureSun,});
         // 太陽
         const spriteSun = new THREE.Sprite(materialSun);
-        spriteSun.scale.set(109,109,1);
+        spriteSun.scale.set(1,1,1);
         spriteSun.position.set(0,0,0); //位置を指定
         scene.add(spriteSun);
 
@@ -123,9 +123,9 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          sprite1.rotation.y += 0.24;
+          sprite1.rotation.x += 0.24;
           sprite2.rotation.y += 0.61;
-          sprite3.rotation.y += 1;
+          sprite3.rotation.z += 1;
           sprite4.rotation.y += 1.88;
           sprite5.rotation.y += 11.86;
           sprite6.rotation.y += 29.45;
