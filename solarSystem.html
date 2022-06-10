@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(191970);
+        renderer.setClearColor(0x191970);
 
 
         // シーンを作成
@@ -154,14 +154,14 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          revolution1.rotation.y += 0.00024;
-          revolution2.rotation.y += 0.00061;
-          revolution3.rotation.y += 0.001;
-          revolution4.rotation.y += 0.00188;
-          revolution5.rotation.y += 0.01186;
-          revolution6.rotation.y += 0.02945;
-          revolution7.rotation.y += 0.08402;
-          revolution8.rotation.y += 0.16477;
+          revolution1.rotation.y += 0.000024;
+          revolution2.rotation.y += 0.000061;
+          revolution3.rotation.y += 0.0001;
+          revolution4.rotation.y += 0.000188;
+          revolution5.rotation.y += 0.001186;
+          revolution6.rotation.y += 0.002945;
+          revolution7.rotation.y += 0.008402;
+          revolution8.rotation.y += 0.016477;
 
            // 箱を回転させる
           box.rotation.x += 0.01;
