@@ -67,8 +67,12 @@
           sprite.scale.set(1, 1, 1);
 
           scene.add(sprite);
+          add.group(sprite);
         }
 
+        // グループを作る
+        const group = new THREE.Group();
+        scene.add(group);
 
         update();
 
@@ -77,6 +81,8 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+
+          group.rotation.y += 0.05;
 
            // 箱を回転させる
           box.rotation.x += 0.01;
